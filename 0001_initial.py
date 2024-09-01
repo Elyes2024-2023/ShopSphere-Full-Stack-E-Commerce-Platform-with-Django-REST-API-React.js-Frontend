@@ -4,12 +4,18 @@ from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
 
-
 class Migration(migrations.Migration):
+    """
+    Django Migration for creating the 'Product' model.
 
-    initial = True
+    This migration file sets up the initial schema for the 'Product' model,
+    including all fields and their respective attributes.
+    """
+
+    initial = True  # Indicates that this is the first migration for this app
 
     dependencies = [
+        # Specifies that this migration depends on the creation of the User model
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
@@ -17,18 +23,104 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Product',
             fields=[
-                ('name', models.CharField(blank=True, max_length=200, null=True)),
-                ('image', models.ImageField(blank=True, null=True, upload_to='')),
-                ('brand', models.CharField(blank=True, max_length=200, null=True)),
-                ('category', models.CharField(blank=True, max_length=200, null=True)),
-                ('description', models.TextField(blank=True, null=True)),
-                ('rating', models.DecimalField(blank=True, decimal_places=2, max_digits=7, null=True)),
-                ('numReviews', models.IntegerField(blank=True, default=0, null=True)),
-                ('price', models.DecimalField(blank=True, decimal_places=2, max_digits=7, null=True)),
-                ('countInStock', models.IntegerField(blank=True, default=0, null=True)),
-                ('createdAt', models.DateTimeField(auto_now_add=True)),
-                ('_id', models.AutoField(editable=False, primary_key=True, serialize=False)),
-                ('user', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL)),
+                # Primary key for the Product model, auto-incremented and not editable
+                ('_id', models.AutoField(
+                    primary_key=True, 
+                    editable=False, 
+                    serialize=False
+                )),
+                
+                # Name of the product, can be left blank or null
+                ('name', models.CharField(
+                    max_length=200, 
+                    blank=True, 
+                    null=True, 
+                    help_text="The name of the product."
+                )),
+                
+                # Image of the product, optional
+                ('image', models.ImageField(
+                    upload_to='', 
+                    blank=True, 
+                    null=True, 
+                    help_text="Upload an image of the product."
+                )),
+                
+                # Brand of the product, can be left blank or null
+                ('brand', models.CharField(
+                    max_length=200, 
+                    blank=True, 
+                    null=True, 
+                    help_text="The brand of the product."
+                )),
+                
+                # Category of the product, can be left blank or null
+                ('category', models.CharField(
+                    max_length=200, 
+                    blank=True, 
+                    null=True, 
+                    help_text="The category of the product."
+                )),
+                
+                # Description of the product, can be left blank or null
+                ('description', models.TextField(
+                    blank=True, 
+                    null=True, 
+                    help_text="A detailed description of the product."
+                )),
+                
+                # Rating of the product, allows for decimal values
+                ('rating', models.DecimalField(
+                    max_digits=7, 
+                    decimal_places=2, 
+                    blank=True, 
+                    null=True, 
+                    help_text="The rating of the product, from 0 to 10."
+                )),
+                
+                # Number of reviews for the product, default is 0
+                ('numReviews', models.IntegerField(
+                    default=0, 
+                    blank=True, 
+                    null=True, 
+                    help_text="The number of reviews the product has received."
+                )),
+                
+                # Price of the product, allows for decimal values
+                ('price', models.DecimalField(
+                    max_digits=7, 
+                    decimal_places=2, 
+                    blank=True, 
+                    null=True, 
+                    help_text="The price of the product."
+                )),
+                
+                # Quantity of the product in stock, default is 0
+                ('countInStock', models.IntegerField(
+                    default=0, 
+                    blank=True, 
+                    null=True, 
+                    help_text="The number of units of the product in stock."
+                )),
+                
+                # Timestamp of when the product was created
+                ('createdAt', models.DateTimeField(
+                    auto_now_add=True, 
+                    help_text="The date and time when the product was created."
+                )),
+                
+                # Foreign key linking the product to a user, can be null
+                ('user', models.ForeignKey(
+                    to=settings.AUTH_USER_MODEL, 
+                    null=True, 
+                    on_delete=django.db.models.deletion.SET_NULL, 
+                    help_text="The user who created or is associated with this product."
+                )),
             ],
+            options={
+                'verbose_name': 'Product',
+                'verbose_name_plural': 'Products',
+                'ordering': ['-createdAt'],
+            },
         ),
     ]
