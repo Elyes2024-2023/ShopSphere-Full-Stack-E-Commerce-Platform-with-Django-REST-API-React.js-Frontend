@@ -1,6 +1,10 @@
 # ShopSphere - E-Commerce Platform
+> Developed by ELYES
 
 A full-stack e-commerce platform built with Django and React.
+
+## Copyright
+© 2024-2025 ELYES. All rights reserved.
 
 ## Features
 
@@ -124,6 +128,21 @@ EMAIL_HOST_PASSWORD=your_app_password
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Author
+
+* **ELYES** - *Initial work* - [Elyes2024-2023](https://github.com/Elyes2024-2023)
+
+## Acknowledgments
+
+- Django REST Framework team
+- React.js community
+- All contributors and supporters
+
+---
+
+> Developed with ❤️ by ELYES
+> © 2024-2025 ELYES. All rights reserved.
 
 ## 🚀 Features
 
