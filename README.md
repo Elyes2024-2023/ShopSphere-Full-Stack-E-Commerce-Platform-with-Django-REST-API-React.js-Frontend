@@ -8,78 +8,73 @@ A full-stack e-commerce platform built with Django and React.
 
 ## Features
 
-- Full featured shopping cart
-- Product reviews and ratings
-- Top products carousel
-- Product pagination
-- Product search feature
-- User profile with orders
-- Admin product management
-- Admin user management
-- Admin Order details page
-- Mark orders as delivered option
-- Checkout process (shipping, payment method, etc)
-- PayPal / credit card integration
-- Database seeder (products & users)
+* Full featured shopping cart
+* Product reviews and ratings
+* Top products carousel
+* Product pagination
+* Product search feature
+* User profile with orders
+* Admin product management
+* Admin user management
+* Admin Order details page
+* Mark orders as delivered option
+* Checkout process (shipping, payment method, etc)
+* PayPal / credit card integration
+* Database seeder (products & users)
 
 ## Tech Stack
 
 ### Frontend
-- React.js
-- Redux (State Management)
-- React Router
-- React Bootstrap
-- Axios
+
+* React.js
+* Redux (State Management)
+* React Router
+* React Bootstrap
+* Axios
 
 ### Backend
-- Django
-- Django REST Framework
-- PostgreSQL
-- JWT Authentication
+
+* Django
+* Django REST Framework
+* PostgreSQL
+* JWT Authentication
 
 ## Installation
 
 ### Backend Setup
 
 1. Create virtual environment:
-```bash
+
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
 
-2. Install dependencies:
-```bash
+1. Install dependencies:
+
 cd backend
 pip install -r requirements.txt
-```
 
-3. Run migrations:
-```bash
+1. Run migrations:
+
 python manage.py migrate
-```
 
-4. Create superuser:
-```bash
+1. Create superuser:
+
 python manage.py createsuperuser
-```
 
-5. Run server:
-```bash
+1. Run server:
+
 python manage.py runserver
-```
 
 ### Frontend Setup
 
 1. Install dependencies:
-```bash
+
 cd frontend
 npm install
-```
 
-2. Run development server:
-```bash
+1. Run development server:
+
 npm start
-```
 
 ## Environment Variables
 
@@ -99,23 +94,26 @@ EMAIL_HOST_PASSWORD=your_app_password
 ## API Endpoints
 
 ### Products
-- GET /api/products/ - List all products
-- GET /api/products/:id/ - Get product details
-- POST /api/products/ - Create product (admin)
-- PUT /api/products/:id/ - Update product (admin)
-- DELETE /api/products/:id/ - Delete product (admin)
+
+* GET /api/products/ - List all products
+* GET /api/products/:id/ - Get product details
+* POST /api/products/ - Create product (admin)
+* PUT /api/products/:id/ - Update product (admin)
+* DELETE /api/products/:id/ - Delete product (admin)
 
 ### Users
-- POST /api/users/login/ - Login user
-- POST /api/users/register/ - Register user
-- GET /api/users/profile/ - Get user profile
-- PUT /api/users/profile/ - Update user profile
+
+* POST /api/users/login/ - Login user
+* POST /api/users/register/ - Register user
+* GET /api/users/profile/ - Get user profile
+* PUT /api/users/profile/ - Update user profile
 
 ### Orders
-- POST /api/orders/ - Create order
-- GET /api/orders/:id/ - Get order details
-- PUT /api/orders/:id/pay/ - Update order to paid
-- GET /api/orders/myorders/ - Get logged in user orders
+
+* POST /api/orders/ - Create order
+* GET /api/orders/:id/ - Get order details
+* PUT /api/orders/:id/pay/ - Update order to paid
+* GET /api/orders/myorders/ - Get logged in user orders
 
 ## Contributing
 
@@ -129,20 +127,20 @@ EMAIL_HOST_PASSWORD=your_app_password
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Author
+## Authors
 
 * **ELYES** - *Initial work* - [Elyes2024-2023](https://github.com/Elyes2024-2023)
 
 ## Acknowledgments
 
-- Django REST Framework team
-- React.js community
-- All contributors and supporters
+* Django REST Framework team
+* React.js community
+* All contributors and supporters
 
 ---
 
-> Developed with ❤️ by ELYES
-> © 2024-2025 ELYES. All rights reserved.
+Developed by ELYES
+© 2024-2025 ELYES. All rights reserved.
 
 ## 🚀 Features
 
@@ -247,10 +245,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- Your Name - Initial work
+* **ELYES** - *Initial work* - [Elyes2024-2023](https://github.com/Elyes2024-2023)
 
 ## 🙏 Acknowledgments
 
-- Django REST Framework team
-- React.js community
-- All contributors and supporters 
+* Django REST Framework team
+* React.js community
+* All contributors and supporters 
